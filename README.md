@@ -2,6 +2,9 @@
 
 ## Usage
 ```
+# motor_info_node 실행
+ros2 run ec_study motor_info_node
+
 # 모터 컨트롤 노드 실행
 ros2 run ethercat_driver_ros2 motor_control_node
 
