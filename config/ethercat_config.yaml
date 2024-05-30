@@ -1,0 +1,24 @@
+ethercat_config:
+  interface: "eno1"  # 실제 네트워크 인터페이스 이름
+  slaves:
+    - name: "MotorDriver"
+      product_code: 0x00000000  # 모터 드라이버의 제품 코드
+      vendor_id: 0x00000000  # 모터 드라이버의 벤더 ID
+      sync_managers:
+        - index: 0
+          pdo_entries:
+            - index: 0x6040  # Controlword (CiA402)
+              subindex: 0
+              size: 16
+            - index: 0x607A  # Target position (CiA402)
+              subindex: 0
+              size: 32
+        - index: 1
+          pdo_entries:
+            - index: 0x6041  # Statusword (CiA402)
+              subindex: 0
+              size: 16
+            - index: 0x6064  # Position actual value (CiA402)
+              subindex: 0
+              size: 32
+
